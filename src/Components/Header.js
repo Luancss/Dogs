@@ -15,7 +15,7 @@ const Header = () => {
            <Dogs/>
         </Link>
         {data ? (
-        <Link className={styles.login} to="/conta">{data.nome} <button onClick={userLogout}></button></Link>)
+        <Link className={styles.login} to="/conta">{data.nome} <button onClick={userLogout}>Sair</button></Link>)
         : <Link className={styles.login} to="/login">Login / Criar</Link>}
 
       </nav>
