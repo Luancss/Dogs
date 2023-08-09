@@ -50,7 +50,7 @@ export const TOKEN_VALIDATE_POST = (token) => {
   };
 };
 
-export function PHOTO_POST (formData, token) {
+export function PHOTO_POST(formData, token) {
   return {
     url: API_URL + '/api/photo',
     options: {
@@ -96,7 +96,7 @@ export const COMMENT_POST = (id, body) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: 'Bearer' + window.localStorage.getItem('token') ,
+        Authorization: 'Bearer' + window.localStorage.getItem('token'),
       },
       body: JSON.stringify(body)
     },
@@ -109,12 +109,38 @@ export const PHOTO_DELETE = (id) => {
     options: {
       method: 'DELETE',
       headers: {
-        Authorization: 'Bearer' + window.localStorage.getItem('token') ,
+        Authorization: 'Bearer' + window.localStorage.getItem('token'),
       },
     },
   };
 };
 
+
+export function PASSWORD_LOST(body) {
+  return {
+    url: API_URL + '/api/password/lost',
+    options: {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    }
+  }
+}
+
+export function PASSWORD_RESET(body) {
+  return {
+    url: API_URL + '/api/password/reset',
+    options: {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    }
+  }
+}
 
 
 
