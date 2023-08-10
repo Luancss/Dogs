@@ -1,30 +1,33 @@
-.login {
+.login{
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 100vh;
   gap: 2rem;
 }
 
-.login::before {
-  display: block;
+.login::before{
   content: '';
+  display: block;
   background: url('../../Assets/login.jpg') no-repeat center center;
   background-size: cover;
 }
 
-.forms {
+.forms{
   max-width: 30rem;
   padding: 1rem;
+  margin-top: 20vh;
 }
 
-@media(max-width:40rem) {
-  .login {
+@media(max-width: 40rem){
+  .login{
     grid-template-columns: 1fr;
   }
-  .login::before {
+
+  .login::before{
     display: none;
   }
-  .forms {
+
+  .forms{
     max-width: 100%;
   }
 }

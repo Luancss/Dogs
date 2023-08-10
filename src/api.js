@@ -63,7 +63,7 @@ export function PHOTO_POST(formData, token) {
   };
 };
 
-export const PHOTO_GET = (page, total, user) => {
+export const PHOTO_GET = ({ page, total, user }) => {
   return {
     url: `${API_URL}/api/photo/?_page=${page}&_total=${total}&_user=${user}`,
     options: {
@@ -72,13 +72,6 @@ export const PHOTO_GET = (page, total, user) => {
     },
   };
 };
-
-// export const PHOTO_GET = (id) => {
-//   return {
-//     url: `${API_URL}/api/photo/${id}`,
-//   };
-// };
-
 export const PHOTOS_GET = (id) => {
   return {
     url: `${API_URL}/api/photo/${id}`,
@@ -141,6 +134,19 @@ export function PASSWORD_RESET(body) {
     }
   }
 }
+
+export function STATS_GET() {
+  return {
+    url: API_URL + '/api/stats',
+    options: {
+      method: 'GET',
+      headers: {
+        Authorization: 'Bearer' + window.localStorage.getItem('token'),
+      },
+    }
+  }
+}
+
 
 
 
